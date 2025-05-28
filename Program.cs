@@ -8,8 +8,17 @@ namespace PropExample
 {
     class Program
     {
+        public static int classVar = 0;
         static void Main(string[] args)
         {
+            // 클래스 변수 호출
+            Program.classVar = -1;
+
+            // 인스턴수 변수처럼 사용 불가에 주의(자바에서는 OK)
+            //Program p = new Program();
+            //p.classVar = -1;
+
+
             Box box1 = new Box(100, 200);
 
             box1.Width = -20;
