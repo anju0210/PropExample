@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,36 +10,51 @@ namespace PropExample
     class Box
     {
         private int width;
+
+        public int Width
+        {
+            get { return width; }
+            set
+            {
+                if (value < 0)
+                {
+                    Console.WriteLine("너비는 자연수로 입력해주세요");
+                }
+                else
+                {
+                    width = value;
+                }
+            }
+        }
+
         private int height;
+
+        public int Height
+        {
+            get { return height; }
+            set
+            {
+                if (value < 0)
+                {
+                    Console.WriteLine("높이는 자연수로 입력해주세요");
+                }
+                else
+                {
+                    height = value;
+                }
+            }
+        }
 
         public Box(int w, int h)
         {
-            if (width > 0 && height > 0)
-            {
-                this.width = w;
-                this.height = h;
-            }
-            else
-            {
-                Console.WriteLine("너비와 높이는 자연수로 초기화 해주세요");
-            }
+            Width = w;
+            Height = h; //자동으로 setter 호출
         }
 
-        public int getWidth() { return this.width; }
-        public int getHeight() { return this.height; }
-        public void setWidth(int w)
+        public int Area
         {
-            this.width = w;
+            get { return Width * Height; }
         }
 
-        public void setHeight(int h)
-        {
-            this.height = h;
-        }
-
-        public int Area()
-        {
-            return this.width * this.height;
-        }
     }
 }
