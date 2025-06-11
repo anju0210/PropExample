@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PropExample32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -75,9 +76,10 @@ namespace PropExample
 
 
             // 피보나치 재귀 함수
-            Fibonacci fibo = new Fibonacci();
-            Console.WriteLine(fibo.Get(1));
-            Console.WriteLine(fibo.Get(100));
+            //Console.WriteLine(Fibonacci.Get(1));Add commentMore actions
+            //Console.WriteLine(Fibonacci.Get(20));
+            Console.WriteLine(Fibonacci.GetM(1));
+            Console.WriteLine(Fibonacci.GetM(100));
 
         }
         class Test
